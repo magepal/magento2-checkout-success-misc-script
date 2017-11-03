@@ -1,0 +1,26 @@
+{
+    "name": "magepal/magento2-checkoutsuccessmiscscript",
+    "description": "Add miscellaneous HTML and scripts to your checkout success page",
+    "require": {
+        "php": "~5.6.0|7.0.2|7.0.4|~7.0.6|~7.1.0",
+        "magento/module-backend": "100.0.*|100.1.*|100.2.*",
+        "magento/framework": "100.0.*|100.1.*|101.0.*"
+    },
+    "suggest": {
+        "magepal/magento2-previewcheckoutsuccesspage":"Preview checkout success page from admin"
+    },
+    "type": "magento2-module",
+    "version": "1.1.0",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "MagePal\\CheckoutSuccessMiscScript\\": ""
+        }
+    }
+}
