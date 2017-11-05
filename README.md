@@ -3,6 +3,8 @@
 
 Add miscellaneous HTML and scripts quickly and easily to your Magento2 checkout success page. Also, ideal for testing new styling of your thank your page, adding new static blocks or other customization to your checkout page.
 
+![success page miscellaneous html and scripts](https://user-images.githubusercontent.com/1415141/32399662-4081c186-c0ce-11e7-9389-26db6ead8e4c.gif)
+
 ### Order Variables
 
 - Order ID
@@ -12,7 +14,6 @@ Add miscellaneous HTML and scripts quickly and easily to your Magento2 checkout 
 - Tax
 - Coupon Code
 - Discount
-
 
 ## Installation
 
@@ -33,9 +34,6 @@ composer require magepal/magento2-checkout-success-misc-script
 #### Step 2 - Enable extension (from {Magento root} folder)
  * php -f bin/magento module:enable --clear-static-content MagePal_CheckoutSuccessMiscScript
  * php -f bin/magento setup:upgrade
-
-
-![success page miscellaneous html and scripts](https://user-images.githubusercontent.com/1415141/32399662-4081c186-c0ce-11e7-9389-26db6ead8e4c.gif)
 
 
 Contribution
