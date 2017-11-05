@@ -35,19 +35,20 @@ composer require magepal/magento2-checkout-success-misc-script
  * php -f bin/magento module:enable --clear-static-content MagePal_CheckoutSuccessMiscScript
  * php -f bin/magento setup:upgrade
 
+#### Step 3 - Configure Checkout Success Miscellaneous Scripts
+
+Log into your Magento 2 Admin, then goto Stores -> Configuration -> MagePal -> Checkout
 
 Contribution
 ---
 Want to contribute to this extension? The quickest way is to open a [pull request on GitHub](https://help.github.com/articles/using-pull-requests).
 
-Copyright
-----
-
-MagePal LLC.
 
 Support
 ---
 If you encounter any problems or bugs, please open an issue on [GitHub](https://github.com/magepal/magento2-checkout-success-misc-script/issues).
 
 Need help setting up or want to customize this extension to meet your business needs? Please email support@magepal.com and if we like your idea we will add this feature for free or at a discounted rate.
+
+© MagePal LLC.
 
