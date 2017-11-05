@@ -16,7 +16,7 @@ Add miscellaneous HTML and scripts quickly and easily to your Magento2 checkout 
 
 ## Installation
 
-####Step 1
+#### Step 1
 ##### Using Composer (recommended)
 
 ```
