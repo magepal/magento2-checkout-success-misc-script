@@ -16,7 +16,7 @@
         "magepal/magento2-preview-checkout-success-page":"Preview checkout success page from admin"
     },
     "type": "magento2-module",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "license": [
         "OSL-3.0",
         "AFL-3.0"
