@@ -6,8 +6,8 @@
 
 namespace MagePal\CheckoutSuccessMiscScript\Helper;
 
-class Data extends \Magento\Framework\App\Helper\AbstractHelper {
-
+class Data extends \Magento\Framework\App\Helper\AbstractHelper
+{
     const XML_PATH_ACTIVE = 'magepal_checkout/misc_script/active';
 
     protected $variables =[
@@ -45,7 +45,8 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper {
      *
      * @return bool
      */
-    public function isEnabled() {
+    public function isEnabled()
+    {
         return $this->scopeConfig->isSetFlag(self::XML_PATH_ACTIVE, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
     }
 
@@ -54,7 +55,8 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper {
      *
      * @return bool
      */
-    public function getScripts() {
+    public function getScripts()
+    {
         $json = $this->scopeConfig->getValue('magepal_checkout/misc_script/scripts', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
         return $this->jsonHelper->jsonDecode($json);
     }
@@ -65,40 +67,41 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper {
      * @param $price
      * @return float
      */
-    public function formatPrice($price){
+    public function formatPrice($price)
+    {
         return (float)sprintf('%.2F', $price);
     }
 
-
-    public function getVariables(){
+    public function getVariables()
+    {
         return $this->variables;
     }
 
-
-
-    public function setVariableData($key, $value){
-        if(array_key_exists($key, $this->variables)){
+    public function setVariableData($key, $value)
+    {
+        if (array_key_exists($key, $this->variables)) {
             $this->variables[$key] = $value;
         }
 
         return $this;
     }
 
-    public function getTemplateVariableKey(){
+    public function getTemplateVariableKey()
+    {
         $keys = [];
 
-        foreach ($this->getVariables() as $key => $val){
+        foreach ($this->getVariables() as $key => $val) {
             $keys[] = self::TEMPLATE_START . $key . self::TEMPLATE_END;
         }
 
         return $keys;
     }
 
-
-    public function getTemplateVariable(){
+    public function getTemplateVariable()
+    {
         $values = [];
 
-        foreach ($this->getVariables() as $key => $val){
+        foreach ($this->getVariables() as $key => $val) {
             $values[self::TEMPLATE_START . $key . self::TEMPLATE_END] = $val;
         }
 

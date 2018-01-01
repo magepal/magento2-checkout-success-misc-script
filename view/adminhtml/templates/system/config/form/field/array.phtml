@@ -21,7 +21,7 @@ $_colspan = $block->isAddAfter() ? 2 : 1;
             <thead>
             <tr>
                 <?php foreach ($block->getColumns() as $columnName => $column): ?>
-                    <?php if($column['type'] != 'textarea'):?>
+                    <?php if ($column['type'] != 'textarea'):?>
                     <th><?= /* @escapeNotVerified */ $column['label'] ?></th>
                     <?php endif; ?>
                 <?php endforeach;?>
@@ -54,7 +54,7 @@ $_colspan = $block->isAddAfter() ? 2 : 1;
             template: mageTemplate(
                     '<tr id="<%- _id %>">'
                     <?php foreach ($block->getColumns() as $columnName => $column): ?>
-                        <?php if($column['type'] != 'textarea'):?>
+                        <?php if ($column['type'] != 'textarea'):?>
                             + '<td>'
                             + '<?= /* @escapeNotVerified */ $block->renderCellTemplate($columnName) ?>'
                             + '<\/td>'
@@ -69,7 +69,7 @@ $_colspan = $block->isAddAfter() ? 2 : 1;
                             +'<\/tr>'
 
                     <?php foreach ($block->getColumns() as $columnName => $column): ?>
-                        <?php if($column['type'] == 'textarea'):?>
+                        <?php if ($column['type'] == 'textarea'):?>
                         + '<tr id="<%- _id %>"><td colspan="<?= count($block->getColumns())+$_colspan ?>">'
                         + '<?= /* @escapeNotVerified */ $block->renderCellTemplate($columnName) ?>'
                         + '<div><?= $block->getTemplateButtonList() ?></div>'

@@ -1,12 +1,13 @@
 <?php
 /**
- * Copyright © 2017 MagePal LLC. All rights reserved.
+ * Copyright © MagePal LLC. All rights reserved.
  * See COPYING.txt for license details.
  */
 
 namespace MagePal\CheckoutSuccessMiscScript\Block\Adminhtml\System\Config\Form\Field;
 
 use Magento\Config\Block\System\Config\Form\Field\FieldArray\AbstractFieldArray;
+
 /**
  * Class Locations Backend system config array field renderer
  */
@@ -23,13 +24,11 @@ class MiscScript extends AbstractFieldArray
      */
     protected $helper;
 
-
     public function __construct(
         \Magento\Backend\Block\Template\Context $context,
         \MagePal\CheckoutSuccessMiscScript\Helper\Data $helper,
         array $data = []
-    )
-    {
+    ) {
         $this->helper = $helper;
         parent::__construct($context, $data);
     }
@@ -71,10 +70,11 @@ class MiscScript extends AbstractFieldArray
         parent::_construct();
     }
 
-    public function getTemplateButtonList(){
+    public function getTemplateButtonList()
+    {
         $html = '';
 
-        foreach ($this->helper->getTemplateVariableKey() as $key){
+        foreach ($this->helper->getTemplateVariableKey() as $key) {
             $html .= '<button style="margin:3px;" data-mage-init=\\\'{"checkoutSuccessMiscScript":{"textareaId":"<%- _id %>_scripts"}}\\\' type="button">' . $key . '</button>';
         }
 
@@ -112,7 +112,7 @@ class MiscScript extends AbstractFieldArray
         $inputName = $this->_getCellInputElementName($columnName);
 
         if ($column['renderer']) {
-            return str_replace(array("\n", "\t", "\r"), '', $column['renderer']->setInputName(
+            return str_replace(["\n", "\t", "\r"], '', $column['renderer']->setInputName(
                 $inputName
             )->setInputId(
                 $this->_getCellInputElementId('<%- _id %>', $columnName)
@@ -123,7 +123,7 @@ class MiscScript extends AbstractFieldArray
             )->toHtml());
         }
 
-        if($column['type'] == 'text'){
+        if ($column['type'] == 'text') {
             return '<input type="' . $column['type'] . '" id="' . $this->_getCellInputElementId(
                     '<%- _id %>',
                     $columnName
@@ -143,8 +143,7 @@ class MiscScript extends AbstractFieldArray
                 ) ? $column['class'] : 'input-text') . '"' . (isset(
                     $column['style']
                 ) ? ' style="' . $column['style'] . '"' : '') . '/>';
-        }
-        else if($column['type'] == 'checkbox'){
+        } elseif ($column['type'] == 'checkbox') {
             return '<input type="' . $column['type'] . '" id="' . $this->_getCellInputElementId(
                     '<%- _id %>',
                     $columnName
@@ -164,8 +163,7 @@ class MiscScript extends AbstractFieldArray
                 ) ? $column['class'] : 'input-text') . '"' . (isset(
                     $column['style']
                 ) ? ' style="' . $column['style'] . '"' : '') . '/>';
-        }
-        else{
+        } else {
             return '<textarea  id="' . $this->_getCellInputElementId(
                     '<%- _id %>',
                     $columnName
@@ -184,6 +182,5 @@ class MiscScript extends AbstractFieldArray
                     $column['style']
                 ) ? ' style="' . $column['style'] . '"' : '') . '><%- ' . $columnName . ' %></textarea>';
         }
-
     }
 }
