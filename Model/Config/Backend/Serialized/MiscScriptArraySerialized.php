@@ -18,7 +18,7 @@ class MiscScriptArraySerialized extends ArraySerialized
     {
         parent::afterLoad();
         $values = $this->getValue();
-        if(is_array($values)){
+        if (is_array($values)) {
             foreach ($values as &$value) {
                 if (!array_key_exists('is_enabled', $value)) {
                     $value['is_enabled'] = '';
