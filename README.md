@@ -3,7 +3,7 @@
 
 Add miscellaneous HTML and scripts quickly and easily to your Magento2 checkout success page. Also, ideal for testing new styling of your thank your page, adding new static blocks or other customization to your checkout page.
 
-![success page miscellaneous html and scripts](https://user-images.githubusercontent.com/1415141/32399662-4081c186-c0ce-11e7-9389-26db6ead8e4c.gif)
+![success page miscellaneous html and scripts](https://image.ibb.co/hpNTLx/Add_Miscellaneous_HTML_and_Scripts_to_Magento2_Checkout_Success.gif)
 
 ### Order Variables
 
