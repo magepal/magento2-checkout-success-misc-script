@@ -1,3 +1,5 @@
+<a href="http://www.magepal.com" ><img src="https://image.ibb.co/dHBkYH/Magepal_logo.png" width="100" align="right" /></a>
+
 ## Add Miscellaneous HTML and Scripts to Magento2 Checkout Success Page 
 
 
