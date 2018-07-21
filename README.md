@@ -3,7 +3,9 @@
 ## Add Miscellaneous HTML and Scripts to Magento2 Checkout Success Page 
 
 
-Add miscellaneous HTML and scripts quickly and easily to your Magento2 checkout success page. Also, ideal for testing new styling of your thank your page, adding new static blocks or other customization to your checkout page.
+Add miscellaneous HTML and scripts quickly and easily to your Magento2 checkout success page. Ideal for testing new page styling of your order confirmation page, adding new static blocks or other customization to your checkout page.
+
+Easily preview and make changes using our [Preview Order Confirmation Page](https://www.magepal.com/magento2/extensions/preview-order-confirmation-page-for-magento-2.html) extension without having to placing a new order or modifying Magento's core source code.
 
 ![success page miscellaneous html and scripts](https://image.ibb.co/gZcjAx/Success_Page_Miscellaneous_HTML_and_Scripts_by_magepal.gif)
 
