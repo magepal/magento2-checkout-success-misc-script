@@ -29,6 +29,8 @@ class Success extends Template
 
     protected $order;
 
+    protected $templateArray;
+
     /**
      * @param Context $context
      * @param \MagePal\CheckoutSuccessMiscScript\Helper\Data $helper
@@ -104,9 +106,13 @@ class Success extends Template
      */
     protected function processTemplate($string)
     {
-        $template = $this->getTemplateArray();
+        if (empty($this->templateArray)) {
+            $template = $this->getTemplateArray();
 
-        return str_replace(array_keys($template), array_values($template), $string);
+            $this->templateArray = str_replace(array_keys($template), array_values($template), $string);
+        }
+
+        return $this->templateArray;
     }
 
     /**
@@ -120,8 +126,7 @@ class Success extends Template
 
         if (is_array($scripts)) {
             foreach ($scripts as $script) {
-                if (
-                    array_key_exists('is_enabled', $script)
+                if (array_key_exists('is_enabled', $script)
                     && $script['is_enabled'] == 'checked'
                     && array_key_exists('scripts', $script)
                 ) {
