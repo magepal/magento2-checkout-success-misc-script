@@ -7,7 +7,16 @@
 
 namespace MagePal\CheckoutSuccessMiscScript\Helper;
 
-class Data extends \Magento\Framework\App\Helper\AbstractHelper
+use Magento\Framework\App\Helper\AbstractHelper;
+use Magento\Framework\App\Helper\Context;
+use Magento\Framework\ObjectManagerInterface;
+use Magento\Store\Model\ScopeInterface;
+
+/**
+ * Class Data
+ * @package MagePal\CheckoutSuccessMiscScript\Helper
+ */
+class Data extends AbstractHelper
 {
     const XML_PATH_ACTIVE = 'magepal_checkout/misc_script/active';
 
@@ -30,11 +39,11 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     protected $jsonHelper;
 
     /**
-     * @param \Magento\Framework\App\Helper\Context $context
-     * @param \Magento\Framework\ObjectManagerInterface
+     * @param Context $context
+     * @param ObjectManagerInterface
      */
     public function __construct(
-        \Magento\Framework\App\Helper\Context $context,
+        Context $context,
         \Magento\Framework\Json\Helper\Data $jsonHelper
     ) {
         parent::__construct($context);
@@ -48,7 +57,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function isEnabled()
     {
-        return $this->scopeConfig->isSetFlag(self::XML_PATH_ACTIVE, \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        return $this->scopeConfig->isSetFlag(self::XML_PATH_ACTIVE, ScopeInterface::SCOPE_STORE);
     }
 
     /**
@@ -58,7 +67,11 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function getScripts()
     {
-        $json = $this->scopeConfig->getValue('magepal_checkout/misc_script/scripts', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+        $json = $this->scopeConfig->getValue(
+            'magepal_checkout/misc_script/scripts',
+            ScopeInterface::SCOPE_STORE
+        );
+
         return $this->jsonHelper->jsonDecode($json);
     }
 
@@ -73,11 +86,19 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         return (float)sprintf('%.2F', $price);
     }
 
+    /**
+     * @return array
+     */
     public function getVariables()
     {
         return $this->variables;
     }
 
+    /**
+     * @param $key
+     * @param $value
+     * @return $this
+     */
     public function setVariableData($key, $value)
     {
         if (array_key_exists($key, $this->variables)) {
@@ -87,6 +108,9 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         return $this;
     }
 
+    /**
+     * @return array
+     */
     public function getTemplateVariableKey()
     {
         $keys = [];
@@ -98,6 +122,9 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         return $keys;
     }
 
+    /**
+     * @return array
+     */
     public function getTemplateVariable()
     {
         $values = [];

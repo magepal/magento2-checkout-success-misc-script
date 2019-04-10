@@ -7,6 +7,8 @@ Add miscellaneous HTML and scripts quickly and easily to your Magento2 checkout 
 
 Easily preview and make changes using our [Preview Order Confirmation Page](https://www.magepal.com/magento2/extensions/preview-order-confirmation-page-for-magento-2.html) extension without having to placing a new order or modifying Magento's core source code.
 
+Design beautiful order confirmation page with our new [Enhanced Success Page](https://www.magepal.com/magento2/extensions/enhanced-success-page.html) extension.
+
 ![success page miscellaneous html and scripts](https://image.ibb.co/gZcjAx/Success_Page_Miscellaneous_HTML_and_Scripts_by_magepal.gif)
 
 ### Order Variables

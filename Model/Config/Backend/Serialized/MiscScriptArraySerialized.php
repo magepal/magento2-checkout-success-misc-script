@@ -9,6 +9,10 @@ namespace MagePal\CheckoutSuccessMiscScript\Model\Config\Backend\Serialized;
 
 use Magento\Config\Model\Config\Backend\Serialized\ArraySerialized;
 
+/**
+ * Class MiscScriptArraySerialized
+ * @package MagePal\CheckoutSuccessMiscScript\Model\Config\Backend\Serialized
+ */
 class MiscScriptArraySerialized extends ArraySerialized
 {
 

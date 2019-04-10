@@ -7,42 +7,56 @@
 
 namespace MagePal\CheckoutSuccessMiscScript\Block\Checkout;
 
+use Magento\Checkout\Model\Session;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
+use Magento\Sales\Api\Data\OrderInterface;
+use Magento\Sales\Api\OrderRepositoryInterface;
+use MagePal\CheckoutSuccessMiscScript\Helper\Data;
 
+/**
+ * Class Success
+ * @package MagePal\CheckoutSuccessMiscScript\Block\Checkout
+ */
 class Success extends Template
 {
     /**
-     * @var \Magento\Checkout\Model\Session
+     * @var Session
      */
     protected $checkoutSession;
 
     /**
-     * @var \MagePal\CheckoutSuccessMiscScript\Helper\Data
+     * @var Data
      */
     protected $helper;
 
     /**
-     * @var \Magento\Sales\Api\OrderRepositoryInterface
+     * @var OrderRepositoryInterface
      */
     protected $orderRepository;
 
+    /**
+     * @var OrderInterface
+     */
     protected $order;
 
+    /**
+     * @var arrau
+     */
     protected $templateArray;
 
     /**
      * @param Context $context
-     * @param \MagePal\CheckoutSuccessMiscScript\Helper\Data $helper
-     * @param \Magento\Checkout\Model\Session $checkoutSession
-     * @param \Magento\Sales\Api\OrderRepositoryInterface $orderRepository
+     * @param Data $helper
+     * @param Session $checkoutSession
+     * @param OrderRepositoryInterface $orderRepository
      * @param array $data
      */
     public function __construct(
         Context $context,
-        \MagePal\CheckoutSuccessMiscScript\Helper\Data $helper,
-        \Magento\Checkout\Model\Session $checkoutSession,
-        \Magento\Sales\Api\OrderRepositoryInterface $orderRepository,
+        Data $helper,
+        Session $checkoutSession,
+        OrderRepositoryInterface $orderRepository,
         array $data = []
     ) {
         $this->helper = $helper;
@@ -51,6 +65,9 @@ class Success extends Template
         parent::__construct($context, $data);
     }
 
+    /**
+     * @return string
+     */
     protected function _toHtml()
     {
         if (!$this->helper->isEnabled()) {
@@ -61,7 +78,7 @@ class Success extends Template
     }
 
     /**
-     * @return \Magento\Sales\Api\Data\OrderInterface
+     * @return OrderInterface
      */
     protected function getOrder()
     {

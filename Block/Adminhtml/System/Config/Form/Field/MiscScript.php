@@ -7,10 +7,16 @@
 
 namespace MagePal\CheckoutSuccessMiscScript\Block\Adminhtml\System\Config\Form\Field;
 
+use Exception;
+use Magento\Backend\Block\Template\Context;
 use Magento\Config\Block\System\Config\Form\Field\FieldArray\AbstractFieldArray;
+use Magento\Framework\View\Element\AbstractBlock;
+use MagePal\CheckoutSuccessMiscScript\Helper\Data;
+
 
 /**
- * Class Locations Backend system config array field renderer
+ * Class MiscScript
+ * @package MagePal\CheckoutSuccessMiscScript\Block\Adminhtml\System\Config\Form\Field
  */
 class MiscScript extends AbstractFieldArray
 {
@@ -21,13 +27,19 @@ class MiscScript extends AbstractFieldArray
     protected $_template = 'MagePal_CheckoutSuccessMiscScript::system/config/form/field/array.phtml';
 
     /**
-     * @var \MagePal\CheckoutSuccessMiscScript\Helper\Data
+     * @var Data
      */
     protected $helper;
 
+    /**
+     * MiscScript constructor.
+     * @param Context $context
+     * @param Data $helper
+     * @param array $data
+     */
     public function __construct(
-        \Magento\Backend\Block\Template\Context $context,
-        \MagePal\CheckoutSuccessMiscScript\Helper\Data $helper,
+        Context $context,
+        Data $helper,
         array $data = []
     ) {
         $this->helper = $helper;
@@ -71,6 +83,9 @@ class MiscScript extends AbstractFieldArray
         parent::_construct();
     }
 
+    /**
+     * @return string
+     */
     public function getTemplateButtonList()
     {
         $html = '';
@@ -99,15 +114,20 @@ class MiscScript extends AbstractFieldArray
             'type' => $this->_getParam($params, 'type', 'text'),
             'renderer' => false,
         ];
-        if (!empty($params['renderer']) && $params['renderer'] instanceof \Magento\Framework\View\Element\AbstractBlock) {
+        if (!empty($params['renderer']) && $params['renderer'] instanceof AbstractBlock) {
             $this->_columns[$name]['renderer'] = $params['renderer'];
         }
     }
 
+    /**
+     * @param string $columnName
+     * @return mixed|string
+     * @throws Exception
+     */
     public function renderCellTemplate($columnName)
     {
         if (empty($this->_columns[$columnName])) {
-            throw new \Exception('Wrong column name specified.');
+            throw new Exception('Wrong column name specified.');
         }
         $column = $this->_columns[$columnName];
         $inputName = $this->_getCellInputElementName($columnName);
