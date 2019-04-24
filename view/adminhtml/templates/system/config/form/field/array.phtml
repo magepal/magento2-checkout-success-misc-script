@@ -46,8 +46,9 @@ $_colspan = $block->isAddAfter() ? 2 : 1;
     <script>
         require([
             'mage/template',
+            'jquery',
             'prototype'
-        ], function (mageTemplate) {
+        ], function (mageTemplate, $j) {
         // create row creator
         window.arrayRow<?= /* @escapeNotVerified */ $_htmlId ?> = {
 
@@ -89,35 +90,37 @@ $_colspan = $block->isAddAfter() ? 2 : 1;
                 } else {
                     var d = new Date();
                     templateValues = {
-                <?php foreach ($block->getColumns() as $columnName => $column): ?>
-                    <?= /* @escapeNotVerified */ $columnName ?>: '',
-                        'option_extra_attrs': {},
-                    <?php endforeach; ?>
+                        <?php foreach ($block->getColumns() as $columnName => $column): ?>
+                            <?= /* @escapeNotVerified */ $columnName ?> : '',
+                            'option_extra_attrs': {},
+                        <?php endforeach; ?>
                         _id: '_' + d.getTime() + '_' + d.getMilliseconds()
-                };
-            }
+                    };
+                }
 
-            // Insert new row after specified row or at the bottom
-            if (insertAfterId) {
-                Element.insert($(insertAfterId), {after: this.template(templateValues)});
-            } else {
-                Element.insert($('addRow<?= /* @escapeNotVerified */ $_htmlId ?>'), {bottom: this.template(templateValues)});
-            }
+                // Insert new row after specified row or at the bottom
+                if (insertAfterId) {
+                    Element.insert($(insertAfterId), {after: this.template(templateValues)});
+                } else {
+                    Element.insert($('addRow<?= /* @escapeNotVerified */ $_htmlId ?>'), {bottom: this.template(templateValues)});
+                }
 
-            // Fill controls with data
-            if (rowData) {
-                var rowInputElementNames = Object.keys(rowData.column_values);
-                for (var i = 0; i < rowInputElementNames.length; i++) {
-                    if ($(rowInputElementNames[i])) {
-                        $(rowInputElementNames[i]).setValue(rowData.column_values[rowInputElementNames[i]]);
+                // Fill controls with data
+                if (rowData) {
+                    var rowInputElementNames = Object.keys(rowData.column_values);
+                    for (var i = 0; i < rowInputElementNames.length; i++) {
+                        if ($(rowInputElementNames[i])) {
+                            $(rowInputElementNames[i]).setValue(rowData.column_values[rowInputElementNames[i]]);
+                        }
                     }
                 }
-            }
 
-            // Add event for {addAfterBtn} button
-            <?php if ($block->isAddAfter()): ?>
-            Event.observe('addAfterBtn' + templateValues._id, 'click', this.add.bind(this, false, templateValues._id));
-                <?php endif; ?>
+                // Add event for {addAfterBtn} button
+                <?php if ($block->isAddAfter()): ?>
+                Event.observe('addAfterBtn' + templateValues._id, 'click', this.add.bind(this, false, templateValues._id));
+                 <?php endif; ?>
+
+                $j('#magepal_checkout_misc_script_scripts').trigger('contentUpdated');
             },
 
             del: function(rowId) {

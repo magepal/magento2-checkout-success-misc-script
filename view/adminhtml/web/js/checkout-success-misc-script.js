@@ -1,15 +1,12 @@
 define([
-    'jquery',
-    'Magento_Ui/js/modal/alert'
-], function ($, alert) {
+    'jquery'
+], function ($) {
 
     return{
         checkoutSuccessMiscScript: function (options, element) {
-
             $(element).on('click', this.processTemplateVar.bind(this, options.textareaId, element));
         },
-
-        processTemplateVar: function(textareaId, element){
+        processTemplateVar: function (textareaId, element) {
 
             var $textarea = $('#' + textareaId);
 
@@ -17,14 +14,13 @@ define([
             var endCursorPos = $textarea.prop('selectionEnd');
             var v = $textarea.val();
 
-            if(endCursorPos > startCursorPos){
+            if (endCursorPos > startCursorPos) {
                 v = v.slice(0, startCursorPos) + v.slice(endCursorPos);
             }
 
-            var textBefore = v.substring(0,  startCursorPos );
-            var textAfter  = v.substring( startCursorPos, v.length );
-            $textarea.val( textBefore + $(element).text() + textAfter );
-
+            var textBefore = v.substring(0,  startCursorPos);
+            var textAfter = v.substring(startCursorPos, v.length);
+            $textarea.val(textBefore + $(element).text() + textAfter);
         }
     }
 

@@ -91,7 +91,13 @@ class MiscScript extends AbstractFieldArray
         $html = '';
 
         foreach ($this->helper->getTemplateVariableKey() as $key) {
-            $html .= '<button style="margin:3px;" data-mage-init=\\\'{"checkoutSuccessMiscScript":{"textareaId":"<%- _id %>_scripts"}}\\\' type="button">' . $key . '</button>';
+            $html .= sprintf(
+                '<%s style="%s" data-mage-init=\\\'%s\\\' type="button"> %s </button>',
+                'button',
+                'margin:3px;',
+                '{"checkoutSuccessMiscScript":{"textareaId":"<%- _id %>_scripts"}}',
+                $key
+            );
         }
 
         return $html;
@@ -146,9 +152,9 @@ class MiscScript extends AbstractFieldArray
 
         if ($column['type'] == 'text') {
             return '<input type="' . $column['type'] . '" id="' . $this->_getCellInputElementId(
-                    '<%- _id %>',
-                    $columnName
-                ) .
+                '<%- _id %>',
+                $columnName
+            ) .
                 '"' .
                 ' name="' .
                 $inputName .
@@ -166,9 +172,9 @@ class MiscScript extends AbstractFieldArray
                 ) ? ' style="' . $column['style'] . '"' : '') . '/>';
         } elseif ($column['type'] == 'checkbox') {
             return '<input type="' . $column['type'] . '" id="' . $this->_getCellInputElementId(
-                    '<%- _id %>',
-                    $columnName
-                ) .
+                '<%- _id %>',
+                $columnName
+            ) .
                 '"' .
                 ' name="' .
                 $inputName .
@@ -186,9 +192,9 @@ class MiscScript extends AbstractFieldArray
                 ) ? ' style="' . $column['style'] . '"' : '') . '/>';
         } else {
             return '<textarea  id="' . $this->_getCellInputElementId(
-                    '<%- _id %>',
-                    $columnName
-                ) .
+                '<%- _id %>',
+                $columnName
+            ) .
                 '"' .
                 ' name="' .
                 $inputName .
