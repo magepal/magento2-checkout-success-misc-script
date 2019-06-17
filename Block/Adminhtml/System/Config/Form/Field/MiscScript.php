@@ -13,7 +13,6 @@ use Magento\Config\Block\System\Config\Form\Field\FieldArray\AbstractFieldArray;
 use Magento\Framework\View\Element\AbstractBlock;
 use MagePal\CheckoutSuccessMiscScript\Helper\Data;
 
-
 /**
  * Class MiscScript
  * @package MagePal\CheckoutSuccessMiscScript\Block\Adminhtml\System\Config\Form\Field

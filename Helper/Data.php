@@ -9,7 +9,7 @@ namespace MagePal\CheckoutSuccessMiscScript\Helper;
 
 use Magento\Framework\App\Helper\AbstractHelper;
 use Magento\Framework\App\Helper\Context;
-use Magento\Framework\ObjectManagerInterface;
+use Magento\Framework\Json\Helper\Data as JsonHelper;
 use Magento\Store\Model\ScopeInterface;
 
 /**
@@ -34,17 +34,17 @@ class Data extends AbstractHelper
     const TEMPLATE_END = '}}';
 
     /**
-     * @var \Magento\Framework\Json\Helper\Data
+     * @var JsonHelper
      */
     protected $jsonHelper;
 
     /**
      * @param Context $context
-     * @param ObjectManagerInterface
+     * @param JsonHelper $jsonHelper
      */
     public function __construct(
         Context $context,
-        \Magento\Framework\Json\Helper\Data $jsonHelper
+        JsonHelper $jsonHelper
     ) {
         parent::__construct($context);
         $this->jsonHelper = $jsonHelper;

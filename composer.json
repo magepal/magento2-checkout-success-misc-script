@@ -1,6 +1,6 @@
 {
     "name": "magepal/magento2-checkout-success-misc-script",
-    "description": "Add Miscellaneous HTML and JavaScript codes to Magento2 checkout conformation page",
+    "description": "Add Miscellaneous HTML and JavaScript codes to Magento2 checkout confirmation page",
     "keywords": [
         "magento 2",
         "checkout tags",
@@ -21,7 +21,7 @@
         "magepal/magento2-preview-checkout-success-page":"Preview checkout success page from admin"
     },
     "type": "magento2-module",
-    "version": "1.1.7",
+    "version": "1.1.8",
     "license": [
         "proprietary"
     ],

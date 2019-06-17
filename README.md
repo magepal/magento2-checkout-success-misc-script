@@ -21,29 +21,17 @@ Design beautiful order confirmation page with our new [Enhanced Success Page](ht
 - Coupon Code
 - Discount
 
-## Installation
+## Documentation
 
-#### Step 1
-##### Using Composer (recommended)
+ - [How to Installing Order Confirmation Miscellaneous HTML and Scripts](https://www.magepal.com/help/docs/success-page-miscellaneous-scripts-magento-2/#installation)
+
+ - [How to Configure Add Miscellaneous HTML and Scripts to Checkout Success Page](https://www.magepal.com/help/docs/success-page-miscellaneous-scripts-magento-2/#configuration)
+
+## Installation using Composer (recommended)
 
 ```
 composer require magepal/magento2-checkout-success-misc-script
 ```
-
-##### Manually
- * Download the extension
- * Unzip the file
- * Create a folder {Magento 2 root}/app/code/MagePal/CheckoutSuccessMiscScript
- * Copy the content from the unzip folder
-
-
-#### Step 2 - Enable extension (from {Magento root} folder)
- * php -f bin/magento module:enable --clear-static-content MagePal_CheckoutSuccessMiscScript
- * php -f bin/magento setup:upgrade
-
-#### Step 3 - Configure Checkout Success Miscellaneous Scripts
-
-Log into your Magento 2 Admin, then goto Stores -> Configuration -> MagePal -> Checkout
 
 Contribution
 ---
@@ -55,9 +43,23 @@ If you encounter any problems or bugs, please open an issue on [GitHub](https://
 
 Need help setting up or want to customize this extension to meet your business needs? Please email support@magepal.com and if we like your idea we will add this feature for free or at a discounted rate.
 
-Top Magento 2 Extensions
+Magento 2 Extensions
 ---
-[Custom SMTP](https://www.magepal.com/magento2/extensions/custom-smtp.html) | [Google Tag Manager](https://www.magepal.com/magento2/extensions/google-tag-manager.html) | [Enhanced E-commerce](https://www.magepal.com/magento2/extensions/enhanced-ecommerce-for-google-tag-manager.html) | [Reindex](https://www.magepal.com/magento2/extensions/reindex.html) | [Custom Shipping Method](https://www.magepal.com/magento2/extensions/custom-shipping-rates-for-magento-2.html) | [Preview Order Confirmation](https://www.magepal.com/magento2/extensions/preview-order-confirmation-page-for-magento-2.html) | [Guest to Customer](https://www.magepal.com/magento2/extensions/guest-to-customer.html) | [Admin Form Fields Manager](https://www.magepal.com/magento2/extensions/admin-form-fields-manager-for-magento-2.html) | [Customer Dashboard Links Manager](https://www.magepal.com/magento2/extensions/customer-dashboard-links-manager-for-magento-2.html) | [Lazy Loader](https://www.magepal.com/magento2/extensions/lazy-load.html) | [Order Confirmation Page Miscellaneous Scripts](https://www.magepal.com/magento2/extensions/order-confirmation-miscellaneous-scripts-for-magento-2.html)
+- [Custom SMTP](https://www.magepal.com/magento2/extensions/custom-smtp.html)
+- [Catalog Hover Image for Magento](https://www.magepal.com/magento2/extensions/catalog-hover-image-for-magento.html)
+- [Enhanced Success Page for Magento 2](https://www.magepal.com/magento2/extensions/enhanced-success-page.html)
+- [Enhanced Transactional Emails for Magento 2](https://www.magepal.com/magento2/extensions/enhanced-transactional-emails.html)
+- [Google Tag Manager](https://www.magepal.com/magento2/extensions/google-tag-manager.html) 
+- [Enhanced E-commerce](https://www.magepal.com/magento2/extensions/enhanced-ecommerce-for-google-tag-manager.html) 
+- [Reindex](https://www.magepal.com/magento2/extensions/reindex.html) 
+- [Custom Shipping Method](https://www.magepal.com/magento2/extensions/custom-shipping-rates-for-magento-2.html) 
+- [Preview Order Confirmation](https://www.magepal.com/magento2/extensions/preview-order-confirmation-page-for-magento-2.html)
+- [Guest to Customer](https://www.magepal.com/magento2/extensions/guest-to-customer.html) 
+- [Admin Form Fields Manager](https://www.magepal.com/magento2/extensions/admin-form-fields-manager-for-magento-2.html) 
+- [Customer Dashboard Links Manager](https://www.magepal.com/magento2/extensions/customer-dashboard-links-manager-for-magento-2.html) 
+- [Lazy Loader](https://www.magepal.com/magento2/extensions/lazy-load.html) 
+- [Order Confirmation Page Miscellaneous Scripts](https://www.magepal.com/magento2/extensions/order-confirmation-miscellaneous-scripts-for-magento-2.html)
+- [HTML Minifier for Magento2](https://www.magepal.com/magento2/extensions/html-minifier.html)
 
 © MagePal LLC. | [www.magepal.com](http:/www.magepal.com)
 
