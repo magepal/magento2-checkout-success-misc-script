@@ -21,7 +21,7 @@ Design beautiful order confirmation page with our new [Enhanced Success Page](ht
 - Coupon Code
 - Discount
 
-## Documentation
+### Documentation
 
  - [How to Installing Order Confirmation Miscellaneous HTML and Scripts](https://www.magepal.com/help/docs/success-page-miscellaneous-scripts-magento-2/#installation)
 
