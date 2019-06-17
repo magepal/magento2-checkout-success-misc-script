@@ -1,6 +1,6 @@
 <a href="http://www.magepal.com" title="Magento Extension Store" ><img src="https://image.ibb.co/dHBkYH/Magepal_logo.png" width="100" align="right" alt="Magento App Store" /></a>
 
-## Add Miscellaneous HTML and Scripts to Magento2 Checkout Success Page 
+# Add Miscellaneous HTML and Scripts to Magento2 Checkout Success Page 
 
 
 Add miscellaneous HTML and scripts quickly and easily to your Magento2 checkout success page. Ideal for testing new page styling of your order confirmation page, adding new static blocks or other customization to your checkout page.
