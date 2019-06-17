@@ -51,7 +51,7 @@ Magento 2 Extensions
 - [Enhanced Transactional Emails for Magento 2](https://www.magepal.com/magento2/extensions/enhanced-transactional-emails.html)
 - [Google Tag Manager](https://www.magepal.com/magento2/extensions/google-tag-manager.html) 
 - [Enhanced E-commerce](https://www.magepal.com/magento2/extensions/enhanced-ecommerce-for-google-tag-manager.html) 
-- [Reindex](https://www.magepal.com/magento2/extensions/reindex.html) 
+- [Admin Reindex](https://www.magepal.com/magento2/extensions/reindex.html) 
 - [Custom Shipping Method](https://www.magepal.com/magento2/extensions/custom-shipping-rates-for-magento-2.html) 
 - [Preview Order Confirmation](https://www.magepal.com/magento2/extensions/preview-order-confirmation-page-for-magento-2.html)
 - [Guest to Customer](https://www.magepal.com/magento2/extensions/guest-to-customer.html) 
