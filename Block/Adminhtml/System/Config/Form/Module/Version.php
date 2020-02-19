@@ -10,7 +10,6 @@ namespace MagePal\CheckoutSuccessMiscScript\Block\Adminhtml\System\Config\Form\M
 use Magento\Backend\Block\Template\Context;
 use Magento\Config\Block\System\Config\Form\Field;
 use Magento\Framework\Data\Form\Element\AbstractElement;
-use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Module\ModuleListInterface;
 
 /**

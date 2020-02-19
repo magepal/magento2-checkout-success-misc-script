@@ -132,7 +132,7 @@ class MiscScript extends AbstractFieldArray
     public function renderCellTemplate($columnName)
     {
         if (empty($this->_columns[$columnName])) {
-            throw new LocalizedException('Wrong column name specified.');
+            throw new LocalizedException(__('Wrong column name specified.'));
         }
         $column = $this->_columns[$columnName];
         $inputName = $this->_getCellInputElementName($columnName);
