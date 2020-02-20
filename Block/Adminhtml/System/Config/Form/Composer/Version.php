@@ -3,7 +3,7 @@
  * Copyright © MagePal LLC. All rights reserved.
  * See COPYING.txt for license details.
  * http://www.magepal.com | support@magepal.com
-*/
+ */
 
 namespace MagePal\CheckoutSuccessMiscScript\Block\Adminhtml\System\Config\Form\Composer;
 
@@ -112,15 +112,15 @@ class Version extends Field
         try {
             $directoryRead = $this->readFactory->create($path);
             $composerJsonData = $directoryRead->readFile('composer.json');
-
             if ($composerJsonData) {
                 $data = json_decode($composerJsonData);
-                return !empty($data->version) ? $data->version : __('Unknown');
+                if (!empty($data->version)) {
+                    return $data->version;
+                }
             }
+            return __('Unknown');
         } catch (Exception $e) {
-            //
+            return __('Unknown');
         }
-
-        return 'Unknown';
     }
 }

@@ -3,14 +3,14 @@
  * Copyright © MagePal LLC. All rights reserved.
  * See COPYING.txt for license details.
  * http://www.magepal.com | support@magepal.com
-*/
+ */
 
 namespace MagePal\CheckoutSuccessMiscScript\Block\Adminhtml\System\Config\Form\Field;
 
-use Exception;
 use Magento\Backend\Block\Template\Context;
 use Magento\Config\Block\System\Config\Form\Field\FieldArray\AbstractFieldArray;
 use Magento\Framework\View\Element\AbstractBlock;
+use Magento\Framework\Exception\LocalizedException;
 use MagePal\CheckoutSuccessMiscScript\Helper\Data;
 
 /**
@@ -127,12 +127,12 @@ class MiscScript extends AbstractFieldArray
     /**
      * @param string $columnName
      * @return mixed|string
-     * @throws Exception
+     * @throws LocalizedException
      */
     public function renderCellTemplate($columnName)
     {
         if (empty($this->_columns[$columnName])) {
-            throw new Exception('Wrong column name specified.');
+            throw new LocalizedException(__('Wrong column name specified.'));
         }
         $column = $this->_columns[$columnName];
         $inputName = $this->_getCellInputElementName($columnName);

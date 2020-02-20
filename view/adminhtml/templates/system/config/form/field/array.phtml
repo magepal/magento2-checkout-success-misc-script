@@ -3,12 +3,11 @@
  * Copyright © MagePal LLC. All rights reserved.
  * See COPYING.txt for license details.
  * http://www.magepal.com | support@magepal.com
-*/
+ */
 
 /**
  * @var $block MagePal\CheckoutSuccessMiscScript\Block\Adminhtml\System\Config\Form\Field\MiscScript
  */
-
 ?>
 
 <?php
@@ -16,32 +15,39 @@ $_htmlId = $block->getHtmlId() ? $block->getHtmlId() : '_' . uniqid();
 $_colspan = $block->isAddAfter() ? 2 : 1;
 ?>
 
-<div class="design_theme_ua_regexp" id="grid<?= /* @escapeNotVerified */ $_htmlId ?>">
+<div class="design_theme_ua_regexp" id="grid<?= $block->escapeHtmlAttr($_htmlId) ?>">
     <div class="admin__control-table-wrapper">
-        <table class="admin__control-table" id="<?= /* @escapeNotVerified */ $block->getElement()->getId() ?>">
+        <table class="admin__control-table" id="<?= $block->escapeHtmlAttr($block->getElement()->getId()) ?>">
             <thead>
-            <tr>
-                <?php foreach ($block->getColumns() as $columnName => $column): ?>
-                    <?php if ($column['type'] != 'textarea'):?>
-                    <th><?= /* @escapeNotVerified */ $column['label'] ?></th>
-                    <?php endif; ?>
-                <?php endforeach;?>
-                <th class="col-actions" colspan="<?= /* @escapeNotVerified */ $_colspan ?>">Action</th>
-            </tr>
+                <tr>
+                    <?php foreach ($block->getColumns() as $columnName => $column) : ?>
+                        <?php if ($column['type'] != 'textarea') :?>
+                        <th><?= $block->escapeHtml($column['label']) ?></th>
+                        <?php endif; ?>
+                    <?php endforeach;?>
+                    <th class="col-actions" colspan="<?= $block->escapeHtmlAttr($_colspan) ?>">
+                        <?= $block->escapeHtml(__('Action')); ?>
+                    </th>
+                </tr>
             </thead>
             <tfoot>
-            <tr>
-                <td colspan="<?= count($block->getColumns())+$_colspan ?>" class="col-actions-add">
-                    <button id="addToEndBtn<?= /* @escapeNotVerified */ $_htmlId ?>" class="action-add" title="<?= /* @escapeNotVerified */ __('Add') ?>" type="button">
-                        <span><?= /* @escapeNotVerified */ $block->getAddButtonLabel() ?></span>
-                    </button>
-                </td>
-            </tr>
+                <tr>
+                    <td colspan="<?= count($block->getColumns())+$_colspan ?>" class="col-actions-add">
+                        <button id="addToEndBtn<?= $block->escapeHtmlAttr($_htmlId) ?>" 
+                                class="action-add" 
+                                title="<?= $block->escapeHtmlAttr(__('Add')) ?>"
+                                type="button">
+                            <span><?= $block->escapeHtml($block->getAddButtonLabel()) ?></span>
+                        </button>
+                    </td>
+                </tr>
             </tfoot>
-            <tbody id="addRow<?= /* @escapeNotVerified */ $_htmlId ?>"></tbody>
+            <tbody id="addRow<?= $block->escapeHtmlAttr($_htmlId) ?>"></tbody>
         </table>
     </div>
-    <input type="hidden" name="<?= /* @escapeNotVerified */ $block->getElement()->getName() ?>[__empty]" value="" />
+    <input type="hidden" 
+           name="<?= $block->escapeHtmlAttr($block->getElement()->getName()) ?>[__empty]" 
+           value="" />
 
     <script>
         require([
@@ -49,99 +55,99 @@ $_colspan = $block->isAddAfter() ? 2 : 1;
             'jquery',
             'prototype'
         ], function (mageTemplate, $j) {
-        // create row creator
-        window.arrayRow<?= /* @escapeNotVerified */ $_htmlId ?> = {
+            // create row creator
+            window.arrayRow<?= /* @noEscape */ $_htmlId ?> = {
 
-            // define row prototypeJS template
-            template: mageTemplate(
-                    '<tr id="<%- _id %>">'
-                    <?php foreach ($block->getColumns() as $columnName => $column): ?>
-                        <?php if ($column['type'] != 'textarea'):?>
-                            + '<td>'
-                            + '<?= /* @escapeNotVerified */ $block->renderCellTemplate($columnName) ?>'
-                            + '<\/td>'
-                        <?php endif; ?>
-                    <?php endforeach; ?>
-
-                    <?php if ($block->isAddAfter()): ?>
-                            + '<td><button class="action-add" type="button" id="addAfterBtn<%- _id %>"><span><?= /* @escapeNotVerified */ __('Add after') ?><\/span><\/button><\/td>'
-                    <?php endif; ?>
-
-                            + '<td class="col-actions"><button onclick="arrayRow<?= /* @escapeNotVerified */ $_htmlId ?>.del(\'<%- _id %>\')" class="action-delete" type="button"><span><?= /* @escapeNotVerified */ __('Delete') ?><\/span><\/button><\/td>'
-                            +'<\/tr>'
-
-                    <?php foreach ($block->getColumns() as $columnName => $column): ?>
-                        <?php if ($column['type'] == 'textarea'):?>
-                        + '<tr id="<%- _id %>"><td colspan="<?= count($block->getColumns())+$_colspan ?>">'
-                        + '<?= /* @escapeNotVerified */ $block->renderCellTemplate($columnName) ?>'
-                        + '<div><?= $block->getTemplateButtonList() ?></div>'
-                        + '<\/td></tr>'
-                        <?php endif; ?>
-                    <?php endforeach; ?>
-            ),
-
-            add: function(rowData, insertAfterId) {
-                // generate default template data
-                var templateValues;
-
-                // Prepare template values
-                if (rowData) {
-                    templateValues = rowData;
-                } else {
-                    var d = new Date();
-                    templateValues = {
-                        <?php foreach ($block->getColumns() as $columnName => $column): ?>
-                            <?= /* @escapeNotVerified */ $columnName ?> : '',
-                            'option_extra_attrs': {},
+                // define row prototypeJS template
+                template: mageTemplate(
+                        '<tr id="<%- _id %>">'
+                        <?php foreach ($block->getColumns() as $columnName => $column) : ?>
+                            <?php if ($column['type'] != 'textarea') :?>
+                                + '<td>'
+                                + '<?= /* @noEscape */  $block->renderCellTemplate($columnName) ?>'
+                                + '<\/td>'
+                            <?php endif; ?>
                         <?php endforeach; ?>
-                        _id: '_' + d.getTime() + '_' + d.getMilliseconds()
-                    };
-                }
 
-                // Insert new row after specified row or at the bottom
-                if (insertAfterId) {
-                    Element.insert($(insertAfterId), {after: this.template(templateValues)});
-                } else {
-                    Element.insert($('addRow<?= /* @escapeNotVerified */ $_htmlId ?>'), {bottom: this.template(templateValues)});
-                }
+                        <?php if ($block->isAddAfter()) : ?>
+                                + '<td><button class="action-add" type="button" id="addAfterBtn<%- _id %>"><span><?= $block->escapeHtml(__('Add after')) ?><\/span><\/button><\/td>'
+                        <?php endif; ?>
 
-                // Fill controls with data
-                if (rowData) {
-                    var rowInputElementNames = Object.keys(rowData.column_values);
-                    for (var i = 0; i < rowInputElementNames.length; i++) {
-                        if ($(rowInputElementNames[i])) {
-                            $(rowInputElementNames[i]).setValue(rowData.column_values[rowInputElementNames[i]]);
+                                + '<td class="col-actions"><button onclick="arrayRow<?= /* @noEscape */ $_htmlId ?>.del(\'<%- _id %>\')" class="action-delete" type="button"><span><?= $block->escapeHtml(__('Delete')) ?><\/span><\/button><\/td>'
+                                +'<\/tr>'
+
+                        <?php foreach ($block->getColumns() as $columnName => $column) : ?>
+                            <?php if ($column['type'] == 'textarea') :?>
+                            + '<tr id="<%- _id %>"><td colspan="<?= count($block->getColumns())+$_colspan ?>">'
+                            + '<?= /* @noEscape */  $block->renderCellTemplate($columnName) ?>'
+                            + '<div><?= /* @noEscape */ $block->getTemplateButtonList() ?></div>'
+                            + '<\/td></tr>'
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                ),
+
+                add: function(rowData, insertAfterId) {
+                    // generate default template data
+                    var templateValues;
+
+                    // Prepare template values
+                    if (rowData) {
+                        templateValues = rowData;
+                    } else {
+                        var d = new Date();
+                        templateValues = {
+                            <?php foreach ($block->getColumns() as $columnName => $column) : ?>
+                                <?= /* @noEscape */ $columnName ?> : '',
+                                'option_extra_attrs': {},
+                            <?php endforeach; ?>
+                            _id: '_' + d.getTime() + '_' + d.getMilliseconds()
+                        };
+                    }
+
+                    // Insert new row after specified row or at the bottom
+                    if (insertAfterId) {
+                        Element.insert($(insertAfterId), {after: this.template(templateValues)});
+                    } else {
+                        Element.insert($('addRow<?= /* @noEscape */ $_htmlId ?>'), {bottom: this.template(templateValues)});
+                    }
+
+                    // Fill controls with data
+                    if (rowData) {
+                        var rowInputElementNames = Object.keys(rowData.column_values);
+                        for (var i = 0; i < rowInputElementNames.length; i++) {
+                            if ($(rowInputElementNames[i])) {
+                                $(rowInputElementNames[i]).setValue(rowData.column_values[rowInputElementNames[i]]);
+                            }
                         }
                     }
+
+                    // Add event for {addAfterBtn} button
+                    <?php if ($block->isAddAfter()) : ?>
+                    Event.observe('addAfterBtn' + templateValues._id, 'click', this.add.bind(this, false, templateValues._id));
+                    <?php endif; ?>
+
+                    $j('#magepal_checkout_misc_script_scripts').trigger('contentUpdated');
+                },
+
+                del: function(rowId) {
+                    $(rowId).remove();
+                    $(rowId).remove();
                 }
+            };
 
-                // Add event for {addAfterBtn} button
-                <?php if ($block->isAddAfter()): ?>
-                Event.observe('addAfterBtn' + templateValues._id, 'click', this.add.bind(this, false, templateValues._id));
-                 <?php endif; ?>
+            // bind add action to "Add" button in last row
+            // phpcs:disable
+            Event.observe('addToEndBtn<?= /* @noEscape */  $_htmlId ?>', 'click', arrayRow<?= /* @noEscape */  $_htmlId ?>.add.bind(arrayRow<?= /* @noEscape */ $_htmlId ?>, false, false));
+            // phpcs:enable
 
-                $j('#magepal_checkout_misc_script_scripts').trigger('contentUpdated');
-            },
+            // add existing rows
+            <?php foreach ($block->getArrayRows() as $_rowId => $_row) : ?>
+                <?= /* @noEscape */ "arrayRow{$_htmlId}.add(" . $_row->toJson() . ");\n"; ?>
+            <?php endforeach; ?>
 
-            del: function(rowId) {
-                $(rowId).remove();
-                $(rowId).remove();
-            }
-        };
-
-        // bind add action to "Add" button in last row
-        Event.observe('addToEndBtn<?= /* @escapeNotVerified */ $_htmlId ?>', 'click', arrayRow<?= /* @escapeNotVerified */ $_htmlId ?>.add.bind(arrayRow<?= /* @escapeNotVerified */ $_htmlId ?>, false, false));
-
-        // add existing rows
-        <?php
-        foreach ($block->getArrayRows() as $_rowId => $_row) {
-            /* @escapeNotVerified */ echo "arrayRow{$_htmlId}.add(" . $_row->toJson() . ");\n";
-        }
-        ?>
-
-        // Toggle the grid availability, if element is disabled (depending on scope)
-        <?php if ($block->getElement()->getDisabled()):?>
-        toggleValueElements({checked: true}, $('grid<?= /* @escapeNotVerified */ $_htmlId ?>').parentNode);
+            // Toggle the grid availability, if element is disabled (depending on scope)
+            <?php if ($block->getElement()->getDisabled()) :?>
+            toggleValueElements({checked: true}, $('grid<?= /* @noEscape */ $_htmlId ?>').parentNode);
             <?php endif;?>
         });
     </script>
