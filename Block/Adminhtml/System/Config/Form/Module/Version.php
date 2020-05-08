@@ -3,14 +3,13 @@
  * Copyright © MagePal LLC. All rights reserved.
  * See COPYING.txt for license details.
  * http://www.magepal.com | support@magepal.com
-*/
+ */
 
 namespace MagePal\CheckoutSuccessMiscScript\Block\Adminhtml\System\Config\Form\Module;
 
 use Magento\Backend\Block\Template\Context;
 use Magento\Config\Block\System\Config\Form\Field;
 use Magento\Framework\Data\Form\Element\AbstractElement;
-use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Module\ModuleListInterface;
 
 /**
