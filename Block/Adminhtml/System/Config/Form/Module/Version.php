@@ -12,10 +12,6 @@ use Magento\Config\Block\System\Config\Form\Field;
 use Magento\Framework\Data\Form\Element\AbstractElement;
 use Magento\Framework\Module\ModuleListInterface;
 
-/**
- * Class Version
- * @package MagePal\CheckoutSuccessMiscScript\Block\Adminhtml\System\Config\Form\Module
- */
 class Version extends Field
 {
 

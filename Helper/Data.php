@@ -12,10 +12,6 @@ use Magento\Framework\App\Helper\Context;
 use Magento\Framework\Json\Helper\Data as JsonHelper;
 use Magento\Store\Model\ScopeInterface;
 
-/**
- * Class Data
- * @package MagePal\CheckoutSuccessMiscScript\Helper
- */
 class Data extends AbstractHelper
 {
     const XML_PATH_ACTIVE = 'magepal_checkout/misc_script/active';

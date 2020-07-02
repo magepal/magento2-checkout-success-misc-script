@@ -18,10 +18,6 @@ use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Filesystem\Directory\ReadFactory;
 use Magento\Framework\Phrase;
 
-/**
- * Class Version
- * @package MagePal\CheckoutSuccessMiscScript\Block\Adminhtml\System\Config\Form\Composer
- */
 class Version extends Field
 {
 

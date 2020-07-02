@@ -13,10 +13,6 @@ use Magento\Framework\View\Element\AbstractBlock;
 use Magento\Framework\Exception\LocalizedException;
 use MagePal\CheckoutSuccessMiscScript\Helper\Data;
 
-/**
- * Class MiscScript
- * @package MagePal\CheckoutSuccessMiscScript\Block\Adminhtml\System\Config\Form\Field
- */
 class MiscScript extends AbstractFieldArray
 {
 

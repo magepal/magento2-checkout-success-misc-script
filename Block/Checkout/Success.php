@@ -14,10 +14,6 @@ use Magento\Sales\Api\Data\OrderInterface;
 use Magento\Sales\Api\OrderRepositoryInterface;
 use MagePal\CheckoutSuccessMiscScript\Helper\Data;
 
-/**
- * Class Success
- * @package MagePal\CheckoutSuccessMiscScript\Block\Checkout
- */
 class Success extends Template
 {
     /**
