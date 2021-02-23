@@ -1,11 +1,13 @@
 <a href="http://www.magepal.com" title="Magento Extension Store" ><img src="https://image.ibb.co/dHBkYH/Magepal_logo.png" width="100" align="right" alt="Magento App Store" /></a>
 
+# Add Miscellaneous HTML and Scripts to Magento2 Checkout Success Page 
+
 [![Total Downloads](https://poser.pugx.org/magepal/magento2-checkout-success-misc-script/downloads)](https://www.magepal.com/order-confirmation-miscellaneous-scripts-for-magento-2.html)
 [![Latest Stable Version](https://poser.pugx.org/magepal/magento2-checkout-success-misc-script/v/stable)](https://www.magepal.com/order-confirmation-miscellaneous-scripts-for-magento-2.html)
 [![GitHub stars](https://img.shields.io/github/stars/magepal/magento2-checkout-success-misc-script.svg)](https://www.magepal.com/order-confirmation-miscellaneous-scripts-for-magento-2.html)
 [![GitHub forks](https://img.shields.io/github/forks/magepal/magento2-checkout-success-misc-script.svg)](https://www.magepal.com/order-confirmation-miscellaneous-scripts-for-magento-2.html)
 
-# Add Miscellaneous HTML and Scripts to Magento2 Checkout Success Page 
+
 
 <a href="https://www.magepal.com/order-confirmation-miscellaneous-scripts-for-magento-2.html" ><img alt="Magento2 - Edit Order Email" src="https://user-images.githubusercontent.com/1415141/108899005-e717f680-75e5-11eb-9df8-719925e05baa.png" /></a>
 
