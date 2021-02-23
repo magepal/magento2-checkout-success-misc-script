@@ -87,7 +87,7 @@ class MiscScript extends AbstractFieldArray
 
         foreach ($this->helper->getTemplateVariableKey() as $key) {
             $html .= sprintf(
-                '<%s style="%s" data-mage-init=\\\'%s\\\' type="button"> %s </button>',
+                '<%s style="%s" data-mage-init=\\\'%s\\\' type="button">%s</button>',
                 'button',
                 'margin:3px;',
                 '{"checkoutSuccessMiscScript":{"textareaId":"<%- _id %>_scripts"}}',

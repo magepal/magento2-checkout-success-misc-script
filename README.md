@@ -7,8 +7,6 @@
 [![GitHub stars](https://img.shields.io/github/stars/magepal/magento2-checkout-success-misc-script.svg)](https://www.magepal.com/order-confirmation-miscellaneous-scripts-for-magento-2.html)
 [![GitHub forks](https://img.shields.io/github/forks/magepal/magento2-checkout-success-misc-script.svg)](https://www.magepal.com/order-confirmation-miscellaneous-scripts-for-magento-2.html)
 
-
-
 <a href="https://www.magepal.com/order-confirmation-miscellaneous-scripts-for-magento-2.html" ><img alt="Magento2 - Edit Order Email" src="https://user-images.githubusercontent.com/1415141/108899005-e717f680-75e5-11eb-9df8-719925e05baa.png" /></a>
 
 Add miscellaneous HTML and scripts quickly and easily to your Magento2 checkout success page. Ideal for testing new page styling of your order confirmation page, adding new static blocks or other customization to your checkout page.
