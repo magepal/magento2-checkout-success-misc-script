@@ -36,7 +36,7 @@
                 </comment>
                 <field id="MagePal_CheckoutSuccessMiscScript" translate="label" type="label" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Composer Version</label>
-                    <frontend_model>MagePal\CheckoutSuccessMiscScript\Block\Adminhtml\System\Config\Form\Composer\Version</frontend_model>
+                    <frontend_model>MagePal\Core\Block\Adminhtml\System\Config\Composer\Version</frontend_model>
                 </field>
                 <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Enable</label>
