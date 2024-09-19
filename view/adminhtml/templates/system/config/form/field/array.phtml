@@ -2,7 +2,7 @@
 /**
  * Copyright © MagePal LLC. All rights reserved.
  * See COPYING.txt for license details.
- * http://www.magepal.com | support@magepal.com
+ * https://www.magepal.com | support@magepal.com
  */
 
 /**
@@ -33,8 +33,8 @@ $_colspan = $block->isAddAfter() ? 2 : 1;
             <tfoot>
                 <tr>
                     <td colspan="<?= count($block->getColumns())+$_colspan ?>" class="col-actions-add">
-                        <button id="addToEndBtn<?= $block->escapeHtmlAttr($_htmlId) ?>" 
-                                class="action-add" 
+                        <button id="addToEndBtn<?= $block->escapeHtmlAttr($_htmlId) ?>"
+                                class="action-add"
                                 title="<?= $block->escapeHtmlAttr(__('Add')) ?>"
                                 type="button">
                             <span><?= $block->escapeHtml($block->getAddButtonLabel()) ?></span>
@@ -45,8 +45,8 @@ $_colspan = $block->isAddAfter() ? 2 : 1;
             <tbody id="addRow<?= $block->escapeHtmlAttr($_htmlId) ?>"></tbody>
         </table>
     </div>
-    <input type="hidden" 
-           name="<?= $block->escapeHtmlAttr($block->getElement()->getName()) ?>[__empty]" 
+    <input type="hidden"
+           name="<?= $block->escapeHtmlAttr($block->getElement()->getName()) ?>[__empty]"
            value="" />
 
     <script>

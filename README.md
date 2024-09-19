@@ -1,4 +1,4 @@
-<a href="http://www.magepal.com" title="Magento Extension Store" ><img src="https://image.ibb.co/dHBkYH/Magepal_logo.png" width="100" align="right" alt="Magento App Store" /></a>
+<a href="https://www.magepal.com" title="Magento Extension Store" ><img src="https://image.ibb.co/dHBkYH/Magepal_logo.png" width="100" align="right" alt="Magento App Store" /></a>
 
 # Add Miscellaneous HTML and Scripts to Magento2 Checkout Success Page 
 
