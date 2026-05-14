@@ -97,7 +97,7 @@ class Data extends AbstractHelper
      */
     public function setVariableData($key, $value)
     {
-        if (array_key_exists($key, $this->variables)) {
+        if ($key !== null && array_key_exists($key, $this->variables)) {
             $this->variables[$key] = $value;
         }
 
