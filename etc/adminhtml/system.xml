@@ -14,7 +14,7 @@
         <section id="magepal_checkout" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="5" translate="label">
             <label>Checkout</label>
             <tab>magepal</tab>
-            <resource>MagePal_PreviewCheckoutSuccessPage::config_magepal_checkoutsuccessmiscscript</resource>
+            <resource>MagePal_CheckoutSuccessMiscScript::config_magepal_checkoutsuccessmiscscript</resource>
             <group id="misc_script" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="0" translate="label">
                 <label>Success Page Miscellaneous HTML and Scripts</label>
                 <attribute type="expanded">1</attribute>

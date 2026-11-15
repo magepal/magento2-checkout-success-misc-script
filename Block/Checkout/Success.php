@@ -106,9 +106,9 @@ class Success extends Template
         $this->helper->setVariableData('total', $this->helper->formatPrice($order->getBaseGrandTotal()));
         $this->helper->setVariableData('sub_total', $this->helper->formatPrice($order->getBaseSubtotal()));
         $this->helper->setVariableData('shipping', $this->helper->formatPrice($order->getBaseShippingAmount()));
-        $this->helper->setVariableData('tax', $this->helper->formatPrice($order->getTaxAmount()));
+        $this->helper->setVariableData('tax', $this->helper->formatPrice($order->getBaseTaxAmount()));
         $this->helper->setVariableData('coupon_code', $order->getCouponCode() ?: '');
-        $this->helper->setVariableData('discount', $this->helper->formatPrice($order->getDiscountAmount()));
+        $this->helper->setVariableData('discount', $this->helper->formatPrice($order->getBaseDiscountAmount()));
 
         return $this->helper->getTemplateVariable();
     }
